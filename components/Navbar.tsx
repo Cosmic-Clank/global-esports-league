@@ -30,10 +30,10 @@ export default function Navbar() {
 						<Link href='/meet-the-team' className='text-base text-muted hover:text-white'>
 							About
 						</Link>
-						<Link href='#cups' className='text-base text-muted hover:text-white'>
+						<Link href='/#cups' className='text-base text-muted hover:text-white'>
 							Cups
 						</Link>
-						<Link href='#sponsors' className='text-base text-muted hover:text-white'>
+						<Link href='/#sponsors' className='text-base text-muted hover:text-white'>
 							Sponsors
 						</Link>
 						<Link href='/register' className='ml-4 px-4 py-2 rounded-md text-white' style={{ backgroundColor: "var(--color-accent-red)" }}>
