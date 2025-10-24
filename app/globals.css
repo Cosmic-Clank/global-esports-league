@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+/* Palette variables (from user) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary-bg: #0D0E12;
+  /* Page background / header */
+  --color-secondary-bg: #1B1D24;
+  /* Cards / panels */
+  --color-accent-red: #E23C52;
+  /* Primary CTA */
+  --color-hero-purple: #1C1F3A;
+  /* Hero gradient overlay */
+  --color-dark-navy: #0F1628;
+  /* Footer */
+  --color-highlight-blue: #5076D1;
+  /* Links / secondary CTAs */
+  --color-muted-gray: #A3A7B4;
+  /* Secondary text */
+  --color-white: #FFFFFF;
+  /* Primary text on dark */
+  --color-gold: #D6A651;
+  /* Badges */
+  --color-pink: #B64E5B;
+  /* Accent hover */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html,
+  body,
+  #__next {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--color-primary-bg);
+    color: var(--color-white);
+    font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: var(--color-highlight-blue);
+  }
+
+  /* utility-friendly helper for muted text */
+  .text-muted {
+    color: var(--color-muted-gray);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Small helpers for hero overlay */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(28, 31, 58, 0.65) 0%, rgba(13, 14, 18, 0.75) 100%);
+}
+
+/* Marquee/scrolling sponsors helper */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  /* duplicate content will make width 200% so translateX(-50%) shows continuous loop */
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-anim {
+  animation-name: marquee-left;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* duration will be set inline from JS for flexibility */
+}
+
+.marquee-paused {
+  animation-play-state: paused !important;
 }
