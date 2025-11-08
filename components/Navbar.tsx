@@ -14,8 +14,8 @@ export default function Navbar() {
 			<div className='mx-auto max-w-7xl px-6 flex items-center justify-between text-lg tracking-wide'>
 				<FadeRight>
 					<Link href='/' aria-label='Gulf Esports League home' className='flex items-center gap-3'>
-						<div className='w-16 h-12 relative'>
-							<Image src='/images/logo.png' alt='Gulf Esports League logo' fill sizes='48px' className='object-contain' />
+						<div className='w-16 h-16 relative'>
+							<Image src='/images/logos/4.png' alt='Gulf Esports League logo' fill sizes='48px' className='object-contain' />
 						</div>
 						<span className='text-white font-semibold text-xl'>Gulf Esports League</span>
 					</Link>

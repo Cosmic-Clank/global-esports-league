@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import FadeRight from "@/components/FadeRight";
 import FadeLeft from "@/components/FadeLeft";
 import FadeUp from "@/components/FadeUp";
+import Image from "next/image";
 
 export const metadata: Metadata = {
 	title: "Meet The Team",
@@ -20,24 +21,17 @@ export default function MeetTheTeam() {
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
 					<FadeRight className='bg-(--color-secondary-bg) rounded-lg p-6 flex items-center justify-center'>
 						<div className='w-full h-72 md:h-96 bg-[#0b0b0b] rounded-md flex items-center justify-center'>
-							<div className='text-center'>
-								<div className='text-muted'>GEL Founders</div>
-								<div className='mt-2 font-semibold'>Founders Photo</div>
-								<div className='text-sm text-muted mt-1'>(with GEL uniforms)</div>
-							</div>
+							<Image src='/images/founders-2.jpeg' alt='GEL Founders' width={512} height={512} className='object-cover w-full h-full' />
 						</div>
 					</FadeRight>
 
 					<FadeLeft>
-						<h1 className='text-3xl font-bold'>Meet the Team</h1>
-						<p className='mt-4 text-muted'>Why start GEL, passion about esports, longing for community, and memorable experiences with gaming and esports — love, hate, unforgettable memories.</p>
-
-						<ul className='mt-6 space-y-2 text-muted list-disc list-inside'>
-							<li>Why start GEL</li>
-							<li>Passion about esports</li>
-							<li>Longing for community</li>
-							<li>Experiences with gaming & esports</li>
-						</ul>
+						<h1 className='text-3xl font-bold'>Meet the Founders</h1>
+						<p className='mt-4 text-muted text-sm tracking-wide'>We started Gulf Esports League (GEL) out of pure passion — a love for gaming and the thrill of competition that's been with us since day one. As lifelong gamers, we always felt that the Gulf had incredible talent, but not enough spaces or opportunities to bring players together and showcase what this region can really do.</p>
+						<p className='mt-4 text-muted text-sm tracking-wide'>We wanted to change that.</p>
+						<p className='mt-4 text-muted text-sm tracking-wide'>GEL was born from our longing for a real gaming community — one that's competitive, supportive, and united by the same excitement we all feel when we play. We saw a gap: esports and gaming culture in the Gulf were growing fast, but the structure, visibility, and recognition weren't quite there yet. So we decided to build something that could help bridge that gap.</p>
+						<p className='mt-4 text-muted text-sm tracking-wide'>Through GEL, we aim to create a true esports ecosystem — a place where players can compete weekly, grow their skills, earn recognition, and be part of something bigger than just the game. We want to raise awareness about the power and potential of gaming, and to prove that the Gulf is ready to stand shoulder-to-shoulder with the global esports scene.</p>
+						<p className='mt-4 text-muted text-sm tracking-wide'>This isn't just an organization for us — it's a community we're proud to build, one tournament at a time.</p>
 					</FadeLeft>
 				</div>
 			</section>
