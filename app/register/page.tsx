@@ -1,4 +1,5 @@
 import CustomButton from "@/components/CustomButton";
+import FadeUp from "@/components/FadeUp";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
@@ -42,17 +43,17 @@ export default function RegisterPage() {
 				<h1 className='text-3xl text-center md:text-4xl font-bold'>Register for the tournament</h1>
 				<p className='text-center text-lg mb-8 leading-relaxed'>Sign up now and secure your spot in our upcoming Esports events.</p>
 			</div>
-			<div className='max-w-4xl mx-auto space-y-8'>
+			<div className='max-w-4xl mx-auto space-y-8 px-4'>
 				{tourneys.map((tourney, index) => {
 					return (
-						<div key={index} className={`flex justify-between relative w-full bg-(--color-secondary-bg) rounded-3xl p-9 gap-8 ${index % 2 == 0 ? "flex-row" : "flex-row-reverse"}`}>
+						<FadeUp key={index} className={`flex flex-col-reverse justify-between relative w-full bg-(--color-secondary-bg) rounded-xl md:p-8 p-4 gap-8 ${index % 2 == 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
 							<div className='flex flex-col'>
 								<h3 className='text-3xl tracking-wide mb-4'>{tourney.name}</h3>
-								<p className='text-gray-400 text-lg'>{tourney.description}</p>
+								<p className='text-gray-400 text-md md:text-lg'>{tourney.description}</p>
 								<CustomButton href={tourney.href} text='Register Now' />
 							</div>
-							<Image className='w-72 rounded-xl' src={tourney.image} width={216} height={216} alt={`image for ${tourney.name} tournament`} />
-						</div>
+							<Image className='w-full md:w-80 rounded-lg object-cover' src={tourney.image} width={216} height={216} alt={`image for ${tourney.name} tournament`} />
+						</FadeUp>
 					);
 				})}
 			</div>
