@@ -57,7 +57,7 @@ export default function LeaguePage() {
 
 			<section className='mx-auto max-w-6xl px-6 py-12'>
 				<FadeUp>
-					<h3 className='text-xl font-bold'>Want to participate?</h3>
+					{/* <h3 className='text-xl font-bold'>Want to participate?</h3> */}
 					<p className='mt-3 text-muted'>Check the registration page for upcoming seasons, formats, and how to earn Tournament Points. If you have a community idea for a Variant League, reach out — we love collabs that grow the scene.</p>
 				</FadeUp>
 			</section>

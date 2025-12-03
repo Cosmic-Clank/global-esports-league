@@ -9,7 +9,7 @@ export default function GamingCups() {
 
 	return (
 		<section id='cups' className='mx-auto max-w-6xl px-6 py-12'>
-			<h3 className='text-xl font-bold mb-6'>Gaming Cups</h3>
+			<h3 className='text-xl font-bold mb-6'>Tournament Leagues</h3>
 			<FadeUp stagger className='flex flex-wrap gap-6 justify-center'>
 				{games.map((g) => (
 					<div key={g.tag} className='bg-(--color-secondary-bg) rounded-lg p-6 flex flex-col items-center'>
